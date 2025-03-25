@@ -34,6 +34,7 @@ go run .
 ### 1. 添加闹钟
 
 **请求：**
+
 - 方法：POST
 - 路径：/alarm/add
 - 内容类型：application/json
@@ -41,6 +42,7 @@ go run .
 **请求体格式：**
 
 添加一次性闹钟：
+
 ```json
 {
   "time": "2023-05-20 08:30:00",  // 格式：yyyy-MM-dd HH:mm:ss
@@ -49,6 +51,7 @@ go run .
 ```
 
 添加重复性闹钟：
+
 ```json
 {
   "schedule": "0 30 8 * * *",  // cron表达式：秒 分 时 日 月 星期
@@ -57,6 +60,7 @@ go run .
 ```
 
 **成功响应示例：**
+
 ```json
 {
   "success": true,
@@ -71,10 +75,12 @@ go run .
 ### 2. 移除闹钟
 
 **请求：**
+
 - 方法：DELETE
 - 路径：/alarm/remove?id=1
 
 **成功响应示例：**
+
 ```json
 {
   "success": true,
@@ -85,10 +91,12 @@ go run .
 ### 3. 列出所有闹钟
 
 **请求：**
+
 - 方法：GET
 - 路径：/alarm/list
 
 **成功响应示例：**
+
 ```json
 {
   "success": true,
@@ -118,4 +126,4 @@ Cron 表达式格式为 `秒 分 时 日 月 星期`，例如：
 - `0 30 9 * * 1-5` - 工作日（周一至周五）早上9点30分
 - `0 0 12 1 * *` - 每月1号中午12点
 
-详细语法请参考 [cron 表达式文档](https://github.com/robfig/cron)。 
+详细语法请参考 [cron 表达式文档](https://github.com/robfig/cron)。
